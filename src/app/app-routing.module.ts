@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: "",component:LoginComponent},
   { path:"products",component:ViewAllProductsComponent,canActivate:[CactivateGuard]},
   { path: "login", component: LoginComponent},
-  { path: "products/:id", component:SingleProductComponent},
+  { path: "products/:id", component:SingleProductComponent,canActivate:[CactivateGuard]},
   { path: "productbycategory/:id",component:ViewproductsByCategoryComponent},
   { path: "googlemaps",component:GooglemapsComponent}
   
