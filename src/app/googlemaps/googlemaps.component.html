@@ -1,0 +1,191 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light main-menu" style="box-shadow:none">
+    <div class="container">
+  
+      <button type="button" id="sidebarCollapse" class="btn btn-link d-block d-md-none">
+                  <i class="bx bx-menu icon-single"></i>
+              </button>
+  
+      <a class="navbar-brand" href="#">
+       <h4 class="font-weight-bold" style="margin-left: -15%;">Ecommerce</h4>
+       <img src="assets/images/flipkart2.png"  width="25%" alt="">
+      </a>
+  
+      <ul class="navbar-nav ml-auto d-block d-md-none">
+        <li class="nav-item">
+          <a class="btn btn-link" href="#"><i class="bx bxs-cart icon-single"></i> <span class="badge badge-danger"></span></a>
+        </li>
+      </ul>
+  
+      <div class="collapse navbar-collapse">
+        <!-- <form class="form-inline my-2 my-lg-0 mx-auto">
+          <input class="form-control" type="search" name="title" [(ngModel)]="titleSearch" (ngModelChange)="Search()" placeholder="Search">
+        </form> -->
+  
+        <ul class="navbar-nav">
+          <!--<li class="nav-item">
+            <a class="btn btn-link" href="#"><i class="bx bxs-cart icon-single"></i> <span class="badge badge-danger">3</span></a>
+          </li> -->
+          <li class="nav-item ml-md-3">
+            <!-- <a class="btn btn-primary" href="#"><i class="bx bxs-user-circle mr-1"></i> Log In / Register</a> -->
+            <div class="logout" >
+              <button type="button" (click)="LogoutUser()"  class="btn btn-info btn-md" style="font-weight: 600;">Logout</button>
+          </div>
+          </li>
+        </ul>
+      </div>
+  
+    </div>
+  </nav>
+  
+  <nav class="navbar navbar-expand-md navbar-light bg-light sub-menu" >
+    <div class="container">
+      <div class="collapse navbar-collapse" id="navbar" >
+        <ul class="navbar-nav mx-auto">
+          <!-- <li class="nav-item active"> -->
+            <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+          <!-- </li> -->
+          <!-- <li class="nav-item"> -->
+            <!-- <a class="nav-link" href="#">Products</a> -->
+          <!-- </li> -->
+          <!-- <li class="nav-item"> -->
+            <!-- <a class="nav-link" href="#">Schools</a> -->
+          <!-- </li> -->
+          <!-- <li class="nav-item"> -->
+            <!-- <a class="nav-link" href="#">Publishers</a> -->
+          <!-- </li> -->
+          <li class="nav-item dropdown" >
+            <!-- <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Categories
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Men's Clothing</a>
+                                <a class="dropdown-item" href="#">Women's Clothing</a>
+                                <a class="dropdown-item" href="#">Jwellery</a>
+                                <a class="dropdown-item" href="#">Electronics</a> 
+                              </div>
+                          </a> -->
+            
+            <!-- <div class="dropdown" >
+            <select  (change)="onselect($event)" class="btn btn-info" style="margin-left: 395%;font-weight: 600;" >
+              <option [value] = "0" style="font-weight: 600;">Categories</option>
+              <option *ngFor="let item of categories" [value]="item" style="font-weight: 600;">{{item}}</option>
+          </select>
+      </div> -->
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Google Map with Search -->
+  <!-- <mat-card style="margin-top:50px" style="height: 100vh; background-color: skyblue;">
+    <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" fxFlex.lg="100" fxFlex.xl="100">
+
+      <div fxLayout="row wrap" class="col-gap" >
+        <div fxFlex.xs="50" fxFlex.sm="50" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50" > -->
+          <!-- <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/> -->
+          <!-- <input ngx-google-places-autocomplete   #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
+        </div>
+        <div fxFlex.xs="50" fxFlex.sm="50" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50" > -->
+         <!-- maps -->
+          
+         <!-- <agm-map 
+            [latitude]='latitude'
+            [longitude]='longitude'
+            [zoom]='zoom'
+            [mapTypeId]='mapTypeId'
+            [mapTypeControl]="true"
+            
+
+            > -->
+            <agm-map-type-control ></agm-map-type-control>
+            
+         
+            <!-- <agm-marker 
+            *ngFor = "let post of positions" [latitude]="post.post_latitude" [longitude]="post.post_longitude"
+            
+            > -->
+            <!-- <agm-info-window >
+             <strong> City:{{post.post_city}}<br>
+              Latitude:{{post.post_latitude}}<br>
+              Longitude: {{post.post_longitude}}</strong>
+            </agm-info-window>
+              -->
+            <!-- </agm-marker> -->
+          
+         <!-- </agm-map> -->
+        
+       
+      
+         <!-- <agm-map  [latitude]="latitude" [longitude]="longitude" >        
+          <agm-marker  *ngFor = "let post of positions" [latitude]="post.post_latitude" [longitude]="post.post_longitude" [zoom]='zoom'>
+            <agm-info-window >
+              City:{{post.post_city}}<br>
+              Latitude:{{post.post_latitude}}<br>
+              Longitude: {{post.post_longitude}}
+            </agm-info-window>
+          </agm-marker>
+         </agm-map> -->
+         <!-- <button class="btn-theme btn btn-primary" tabindex="0" style="margin-bottom: -12%;">
+          <a href ="/products" style="color: aliceblue;">Back</a>
+          </button> -->
+
+         <!-- Final Maps -->
+        <!-- </div>
+      </div>
+    </div>
+    
+
+ </mat-card> -->
+
+  <!-- Google Map -->
+  
+ <mat-card style="margin-top:50px" style="height: 100vh; background-color: skyblue;">
+    <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" fxFlex.lg="100" fxFlex.xl="100">
+     
+      <div fxLayout="row wrap" class="col-gap">
+        <div fxFlex.xs="50" fxFlex.sm="50" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50">
+          <!-- <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/> -->
+          <!-- <input ngx-google-places-autocomplete   #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/> -->
+        </div>
+        <div fxFlex.xs="50" fxFlex.sm="50" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50">
+         <!-- maps -->
+         <input
+         id="pac-input"
+         class="controls"
+         type="text"
+         placeholder="Search your location"
+       />
+   
+         <div id="map">
+          <agm-map-type-control ></agm-map-type-control>
+        </div>
+       
+      
+         <!-- <agm-map  [latitude]="latitude" [longitude]="longitude" >        
+          <agm-marker  *ngFor = "let post of positions" [latitude]="post.post_latitude" [longitude]="post.post_longitude" [zoom]='zoom'>
+            <agm-info-window >
+              City:{{post.post_city}}<br>
+              Latitude:{{post.post_latitude}}<br>
+              Longitude: {{post.post_longitude}}
+            </agm-info-window>
+          </agm-marker>
+         </agm-map> -->
+         <button class="btn-theme btn btn-primary" tabindex="0" style="margin-bottom: -12%;">
+          <a href ="/products" style="color: aliceblue;">Back</a>
+          </button>
+
+         <!-- Final Maps -->
+        </div>
+      </div>
+    </div>
+ 
+
+ </mat-card>
+
+ 
+ 
+
+
+

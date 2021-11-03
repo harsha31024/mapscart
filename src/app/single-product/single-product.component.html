@@ -1,0 +1,600 @@
+<!-- header -->
+<!-- <h1 style="text-align: center;">Welcome</h1> -->
+<!-- 
+<div class="logout" >
+    <button type="button" (click)="LogoutUser()"  class="btn btn-info btn-md">Logout</button>
+</div> -->
+
+<!-- <div class="overlay"></div> -->
+
+<!-- <div class="utility-nav d-none d-md-block" >
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <p class="small"><i class="bx bx-envelope"></i> logo@example.com | <i class="bx bx-phone"></i> +91-9876543210
+        </p>
+      </div>
+
+      <div class="col-12 col-md-6 text-right">
+        <p class="small">Free shipping on total of $99 of all products</p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<nav class="navbar navbar-expand-md navbar-light bg-light main-menu" style="box-shadow:none">
+   <div class="container">
+ 
+     <button type="button" id="sidebarCollapse" class="btn btn-link d-block d-md-none">
+                 <i class="bx bx-menu icon-single"></i>
+             </button>
+ 
+     <a class="navbar-brand" href="#">
+      <h3 class="font-weight-bold" style="margin-left: -15%;">Ecommerce</h3>
+      <img src="assets/images/flipkart2.png"  width="25%" alt="" >
+     </a>
+ 
+     <ul class="navbar-nav ml-auto d-block d-md-none">
+       <li class="nav-item">
+         <a class="btn btn-link" href="#"><i class="bx bxs-cart icon-single"></i> <span class="badge badge-danger"></span></a>
+       </li>
+     </ul>
+ 
+     <div class="collapse navbar-collapse" style="margin-right: 20%;">
+
+      <form class="form-inline my-2 my-lg-0 mx-auto">
+  
+        <input class="form-control" type="search" name="title" [(ngModel)]="titleSearch" (ngModelChange)="Search()"
+          placeholder=" Search your products" autocomplete="off">
+        <button type="submit" class="button"><i class="fa fa-search"></i></button>
+
+      </form>
+       <!-- <form class="form-inline my-2 my-lg-0 mx-auto">
+         <input class="form-control" type="search" name="title" [(ngModel)]="titleSearch" (ngModelChange)="Search()" placeholder="Search">
+       </form> -->
+ 
+       <ul class="navbar-nav">
+         <!--<li class="nav-item">
+           <a class="btn btn-link" href="#"><i class="bx bxs-cart icon-single"></i> <span class="badge badge-danger">3</span></a>
+         </li> -->
+         <li class="nav-item ml-md-3">
+           <!-- <a class="btn btn-primary" href="#"><i class="bx bxs-user-circle mr-1"></i> Log In / Register</a> -->
+           <div class="logout" >
+             <button type="button" (click)="LogoutUser()"  class="btn btn-info btn-md" style="font-weight: 600;">Logout</button>
+         </div>
+         </li>
+       </ul>
+     </div>
+ 
+   </div>
+ </nav>
+ 
+ <nav class="navbar navbar-expand-md navbar-light bg-light sub-menu" >
+   <div class="container">
+     <div class="collapse navbar-collapse" id="navbar" >
+       <ul class="navbar-nav mx-auto">
+         <!-- <li class="nav-item active"> -->
+           <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+         <!-- </li> -->
+         <!-- <li class="nav-item"> -->
+           <!-- <a class="nav-link" href="#">Products</a> -->
+         <!-- </li> -->
+         <!-- <li class="nav-item"> -->
+           <!-- <a class="nav-link" href="#">Schools</a> -->
+         <!-- </li> -->
+         <!-- <li class="nav-item"> -->
+           <!-- <a class="nav-link" href="#">Publishers</a> -->
+         <!-- </li> -->
+         <li class="nav-item dropdown" >
+           <!-- <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             Categories
+                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                               <a class="dropdown-item" href="#">Men's Clothing</a>
+                               <a class="dropdown-item" href="#">Women's Clothing</a>
+                               <a class="dropdown-item" href="#">Jwellery</a>
+                               <a class="dropdown-item" href="#">Electronics</a> 
+                             </div>
+                         </a> -->
+           
+           <div class="dropdown" >
+           <select  (change)="onselect($event)" class="btn btn-info" style="margin-left: 395%;font-weight: 600;" >
+             <option [value] = "0" style="font-weight: 600;">Categories</option>
+             <option *ngFor="let item of categories" [value]="item" style="font-weight: 600;">{{item}}</option>
+         </select>
+     </div>
+         </li>
+         <!-- <li class="nav-item">
+           <a class="nav-link" href="#">Contact</a>
+         </li> -->
+       </ul>
+     </div>
+   </div>
+ </nav>
+ 
+ <!-- <div class="search-bar d-block d-md-none">
+   <div class="container">
+     <div class="row">
+       <div class="col-12">
+         <form class="form-inline mb-3 mx-auto">
+           <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search">
+           <button class="btn btn-success" type="submit"><i class="bx bx-search"></i></button>
+         </form>
+       </div>
+     </div>
+   </div>
+ </div> -->
+ 
+  <!-- Sidebar  -->
+ <!-- <nav id="sidebar">
+   <div class="sidebar-header">
+     <div class="container">
+       <div class="row align-items-center">
+         <div class="col-10 pl-0">
+           <a class="btn btn-primary" href="#"><i class="bx bxs-user-circle mr-1"></i> Log In</a>
+         </div>
+ 
+         <div class="col-2 text-left">
+           <button type="button" id="sidebarCollapseX" class="btn btn-link">
+                             <i class="bx bx-x icon-single"></i>
+                         </button>
+         </div>
+       </div>
+     </div>
+   </div>
+ 
+   <ul class="list-unstyled components links">
+     <li class="active">
+       <a href="#"><i class="bx bx-home mr-3"></i> Home</a>
+     </li>
+     <li>
+       <a href="#"><i class="bx bx-carousel mr-3"></i> Products</a>
+     </li>
+     <li>
+       <a href="#"><i class="bx bx-book-open mr-3"></i> Schools</a>
+     </li>
+     <li>
+       <a href="#"><i class="bx bx-crown mr-3"></i> Publishers</a>
+     </li>
+     <li>
+       <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="bx bx-help-circle mr-3"></i>
+                     Support</a>
+       <ul class="collapse list-unstyled" id="pageSubmenu">
+         <li>
+           <a href="#">Delivery Information</a>
+         </li>
+         <li>
+           <a href="#">Privacy Policy</a>
+         </li>
+         <li>
+           <a href="#">Terms & Conditions</a>
+         </li>
+       </ul>
+     </li>
+     <li>
+       <a href="#"><i class="bx bx-phone mr-3"></i> Contact</a>
+     </li>
+   </ul>
+ 
+   <h6 class="text-uppercase mb-1">Categories</h6>
+   <ul class="list-unstyled components mb-3">
+     <li>
+       <a href="#">Category 1</a>
+     </li>
+     <li>
+       <a href="#">Category 1</a>
+     </li>
+     <li>
+       <a href="#">Category 1</a>
+     </li>
+     <li>
+       <a href="#">Category 1</a>
+     </li>
+     <li>
+       <a href="#">Category 1</a>
+     </li>
+     <li>
+       <a href="#">Category 1</a>
+     </li>
+   </ul>
+ 
+   <ul class="social-icons">
+     <li><a href="#" target="_blank" title=""><i class="bx bxl-facebook-square"></i></a></li>
+     <li><a href="#" target="_blank" title=""><i class="bx bxl-twitter"></i></a></li>
+     <li><a href="#" target="_blank" title=""><i class="bx bxl-linkedin"></i></a></li>
+     <li><a href="#" target="_blank" title=""><i class="bx bxl-instagram"></i></a></li>
+   </ul>
+ 
+ </nav> -->
+
+ <!-- for Search -->
+
+<div class="background">
+  <div id="cards_landscape_wrap-2" style="margin-top: -20%;">
+    <div class="container">
+      <div class="row" *ngIf="hideforSearch">
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" *ngFor="let prod of productData">
+
+          <a href="">
+            <div class="card-flyer">
+              <div class="text-box">
+                <div class="image-box">
+                  <a href="products/{{prod.id}}"> <img src="{{prod.image}}" height="100px" alt="" /></a>
+                </div>
+                <div class="text-container">
+                  <a href="products/{{prod.id}}">
+                    <h5>{{prod.title}}</h5>
+                  </a><br>
+                  <h6 style="margin-left:-40%">price: {{prod.price}}$</h6>
+                  <div><img src="assets/images/eye.png" width="11%" style="margin-left: -70%;"> {{prod.rating.count}}
+                  </div>
+                 
+
+
+                </div>
+
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+ 
+ <!-- single main -->
+ 
+<section id="services" class="services section-bg" *ngIf="hideproducts">
+    <div class="container-fluid" *ngFor="let single of productInfo">
+      <!-- <div class="col-sm-12 text-center mb-4">
+        <a class="btn btn-primary" target="_blank" href="http://paypal.me/skd1996"> Donate Now <i class="fa fa-dollar"></i></a>
+      </div> -->
+       <div class="row row-sm">
+          <div class="col-md-6 _boxzoom">
+             <!-- <div class="zoom-thumb">
+                <ul class="piclist">
+                   <li><img src="https://s.fotorama.io/1.jpg" alt=""></li>
+                   <li><img src="https://s.fotorama.io/2.jpg" alt=""></li>
+                   <li><img src="https://s.fotorama.io/3.jpg" alt=""></li>
+                   <li><img src="https://ucarecdn.com/382a5139-6712-4418-b25e-cc8ba69ab07f/-/stretch/off/-/resize/760x/" alt=""></li>
+                </ul>
+             </div> -->
+             <div class="_product-images">
+                <!-- <div class="picZoomer">
+                   <img class="my_img" src="{{single.image}}" alt="">
+                </div> -->
+                <div class="image-box">
+                    <img src="{{single.image}}" height="700px" width="100%" alt="" />
+                </div>
+             </div>
+          </div>
+          <div class="col-md-6" >
+             <div class="_product-detail-content" style="margin-top: -4%;">
+                <h2 class="_p-name"> {{single.title}} </h2>
+                <div class="_p-price-box">
+                  
+                   <div class="p-list">
+                   
+                      <span><h3>Price:</h3></span>
+                      
+                      <span class="price"> {{single.price}}$ </span>
+                      <span><h3>Rating:</h3><img src="assets/images/starticon1.png"  width="10%" style="margin-left: 0%;margin-right: -46px;"> {{single.rating.rate}}</span>
+                      <span><h3>Views:</h3><img src="assets/images/eye.png"  width="4%" style="margin-left: 0%;"> {{single.rating.count}}</span>
+                   </div>
+                   <img *ngIf="isLoading" src="assets/images/Spinner.gif" width="130px" style="margin-left: -100%;margin-top: -25%;"/>
+                   <!-- <div class="_p-add-cart">
+                      <div class="_p-qty">
+                         <span>Add Quantity</span>
+                         <div class="value-button decrease_" id="" value="Decrease Value">-</div>
+                         <input type="number" name="qty" id="number" value="1" />
+                         <div class="value-button increase_" id="" value="Increase Value">+</div>
+                      </div>
+                   </div> -->
+                   
+                   <div class="_p-features"  >
+                      <span style="font-weight: bold;"> Description About this product:- </span>
+                        {{single.description}}       
+                   </div>
+                   
+                   <form action="" method="post" accept-charset="utf-8">
+                      <ul class="spe_ul"></ul>
+                      <div class="_p-qty-and-cart">
+                         <div class="_p-add-cart">
+                            <!-- <button class="btn-theme btn buy-btn" tabindex="0">
+                            <i class="fa fa-shopping-cart"></i> Buy Now
+                            </button>
+                            <button class="btn-theme btn btn-success" tabindex="0">
+                            <i class="fa fa-shopping-cart"></i> Add to Cart
+                            </button> -->
+                            
+                            <button class="btn-theme btn btn-primary" tabindex="0">
+                             
+                                <a href ="/products" style="color: aliceblue;" (click)="toggleLoading()">Back</a>
+                                </button>
+                            <!-- <input type="hidden" name="pid" value="18" />
+                            <input type="hidden" name="price" value="850" />
+                            <input type="hidden" name="url" value="" />     -->
+                         </div>
+                      </div>
+                   </form>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+ <!-- <section class="sec bg-light">
+    <div class="container">
+       <div class="row">
+          <div class="col-sm-12 title_bx">
+             <h3 class="title"> Recent Post   </h3>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-md-12 list-slider mt-4">
+             <div class="owl-carousel common_wd  owl-theme" id="recent_post">
+                <div class="item">
+                   <div class="sq_box shadow">
+                      <div class="pdis_img"> 
+                         <span class="wishlist">
+                         <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);"> <i class="fa fa-heart"></i></a>
+                         </span>
+                         <a href="#">
+                         <img src="https://ucarecdn.com/05f649bf-b70b-4cf8-90f7-2588ce404a08/-/resize/680x/"> 
+                         </a>
+                      </div>
+                      <h4 class="mb-1"> <a href="details.php"> Milton Bottle </a> </h4>
+                      <div class="price-box mb-2">
+                         <span class="price"> Price <i class="fa fa-inr"></i> 200 </span>
+                         <span class="offer-price"> Offer Price <i class="fa fa-inr"></i> 120 </span>
+                      </div>
+                      <div class="btn-box text-center">
+                         <a class="btn btn-sm" href="javascript:void(0);"> <i class="fa fa-shopping-cart"></i> Add to Cart </a>
+                      </div>
+                   </div>
+                </div>
+                <div class="item">
+                   <div class="sq_box shadow">
+                      <div class="pdis_img"> 
+                         <span class="wishlist">
+                         <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);"> <i class="fa fa-heart"></i></a>
+                         </span>
+                         <a href="#">
+                         <img src="https://ucarecdn.com/05f649bf-b70b-4cf8-90f7-2588ce404a08/-/resize/680x/"> 
+                         </a>
+                      </div>
+                      <h4 class="mb-1"> <a href="details.php"> Milton Bottle </a> </h4>
+                      <div class="price-box mb-2">
+                         <span class="price"> Price <i class="fa fa-inr"></i> 200 </span>
+                         <span class="offer-price"> Offer Price <i class="fa fa-inr"></i> 120 </span>
+                      </div>
+                      <div class="btn-box text-center">
+                         <a class="btn btn-sm" href="javascript:void(0);"> <i class="fa fa-shopping-cart"></i> Add to Cart </a>
+                      </div>
+                   </div>
+                </div>
+                <div class="item">
+                   <div class="sq_box shadow">
+                      <div class="pdis_img"> 
+                         <span class="wishlist">
+                         <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);"> <i class="fa fa-heart"></i></a>
+                         </span>
+                         <a href="#">
+                         <img src="https://ucarecdn.com/05f649bf-b70b-4cf8-90f7-2588ce404a08/-/resize/680x/"> 
+                         </a>
+                      </div>
+                      <h4 class="mb-1"> <a href="#"> Milton Bottle </a> </h4>
+                      <div class="price-box mb-2">
+                         <span class="price"> Price <i class="fa fa-inr"></i> 200 </span>
+                         <span class="offer-price"> Offer Price <i class="fa fa-inr"></i> 120 </span>
+                      </div>
+                      <div class="btn-box text-center">
+                         <a class="btn btn-sm" href="javascript:void(0);"> <i class="fa fa-shopping-cart"></i> Add to Cart </a>
+                      </div>
+                   </div>
+                </div>
+                <div class="item">
+                   <div class="sq_box shadow">
+                      <div class="pdis_img"> 
+                         <span class="wishlist">
+                         <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);"> <i class="fa fa-heart"></i></a>
+                         </span>
+                         <a href="#">
+                         <img src="https://ucarecdn.com/05f649bf-b70b-4cf8-90f7-2588ce404a08/-/resize/680x/"> 
+                         </a>
+                      </div>
+                      <h4 class="mb-1"> <a href="#"> Milton Bottle </a> </h4>
+                      <div class="price-box mb-2">
+                         <span class="price"> Price <i class="fa fa-inr"></i> 200 </span>
+                         <span class="offer-price"> Offer Price <i class="fa fa-inr"></i> 120 </span>
+                      </div>
+                      <div class="btn-box text-center">
+                         <a class="btn btn-sm" href="javascript:void(0);"> <i class="fa fa-shopping-cart"></i> Add to Cart </a>
+                      </div>
+                   </div>
+                </div>
+                <div class="item">
+                   <div class="sq_box shadow">
+                      <div class="pdis_img"> 
+                         <span class="wishlist">
+                         <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);"> <i class="fa fa-heart"></i></a>
+                         </span>
+                         <a href="#">
+                         <img src="https://ucarecdn.com/05f649bf-b70b-4cf8-90f7-2588ce404a08/-/resize/680x/"> 
+                         </a>
+                      </div>
+                      <h4 class="mb-1"> <a href="details.php"> Milton Bottle </a> </h4>
+                      <div class="price-box mb-2">
+                         <span class="price"> Price <i class="fa fa-inr"></i> 200 </span>
+                         <span class="offer-price"> Offer Price <i class="fa fa-inr"></i> 120 </span>
+                      </div>
+                      <div class="btn-box text-center">
+                         <a class="btn btn-sm" href="javascript:void(0);"> <i class="fa fa-shopping-cart"></i> Add to Cart </a>
+                      </div>
+                   </div>
+                </div>
+                <div class="item">
+                   <div class="sq_box shadow">
+                      <div class="pdis_img"> 
+                         <span class="wishlist">
+                         <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);"> <i class="fa fa-heart"></i></a>
+                         </span>
+                         <a href="#">
+                         <img src="https://ucarecdn.com/05f649bf-b70b-4cf8-90f7-2588ce404a08/-/resize/680x/"> 
+                         </a>
+                      </div>
+                      <h4 class="mb-1"> <a href="details.php"> Milton Bottle </a> </h4>
+                      <div class="price-box mb-2">
+                         <span class="price"> Price <i class="fa fa-inr"></i> 200 </span>
+                         <span class="offer-price"> Offer Price <i class="fa fa-inr"></i> 120 </span>
+                      </div>
+                      <div class="btn-box text-center">
+                         <a class="btn btn-sm" href="javascript:void(0);"> <i class="fa fa-shopping-cart"></i> Add to Cart </a>
+                      </div>
+                   </div>
+                </div>
+                <div class="item">
+                   <div class="sq_box shadow">
+                      <div class="pdis_img"> 
+                         <span class="wishlist">
+                         <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);"> <i class="fa fa-heart"></i></a>
+                         </span>
+                         <a href="#">
+                         <img src="https://ucarecdn.com/05f649bf-b70b-4cf8-90f7-2588ce404a08/-/resize/680x/"> 
+                         </a>
+                      </div>
+                      <h4 class="mb-1"> <a href="details.php"> Milton Bottle </a> </h4>
+                      <div class="price-box mb-2">
+                         <span class="price"> Price <i class="fa fa-inr"></i> 200 </span>
+                         <span class="offer-price"> Offer Price <i class="fa fa-inr"></i> 120 </span>
+                      </div>
+                      <div class="btn-box text-center">
+                         <a class="btn btn-sm" href="javascript:void(0);"> <i class="fa fa-shopping-cart"></i> Add to Cart </a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section> -->
+
+ <!-- electronics -->
+<div class="background">
+   <div id="cards_landscape_wrap-2"  style="margin-top: -45%;">
+     <div class="container">
+         <div class="row" *ngIf="hideelectronics">
+             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" *ngFor="let prod of electronics">
+              
+                 <a href="">
+                     <div class="card-flyer">
+                         <div class="text-box">
+                             <div class="image-box">
+                               <a  href="products/{{prod.id}}"> <img src="{{prod.image}}" height="100px"  alt="" /></a>
+                             </div>
+                             <div class="text-container">
+                               <a  href="products/{{prod.id}}"> <h5>{{prod.title}}</h5></a><br>
+                                 <!-- <h5>{{prod.title}}</h5> -->
+                                 <h6 style="margin-left:-40%">price: {{prod.price}}$</h6>
+                               <!-- <div><img src="assets/images/star.png"  width="12%" style="margin-left: -70%;"></div><br> -->
+                               <div><img src="assets/images/eye.png"  width="11%" style="margin-left: -70%;"> {{prod.rating.count}}</div>
+                                 <!-- <a  href="products/{{prod.id}}" class="btn-card">View</a> -->
+                                 
+                                
+                             </div>
+                             
+                         </div>
+                     </div>
+                 </a>
+             </div>
+           </div> 
+   
+     <!-- jwellery -->
+     <div class="background">
+     <div id="cards_landscape_wrap-2" style="margin-top: -40%;">
+       <div class="container">
+           <div class="row" *ngIf="hidejwellery">
+               <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" *ngFor="let prod of jewelery">
+                
+                   <a href="">
+                       <div class="card-flyer">
+                           <div class="text-box">
+                               <div class="image-box">
+                                 <a  href="products/{{prod.id}}"> <img src="{{prod.image}}" height="100px" alt="" /></a>
+                               </div>
+                               <div class="text-container">
+                                 <a  href="products/{{prod.id}}"> <h5>{{prod.title}}</h5></a><br>
+                                   <!-- <h5>{{prod.title}}</h5> -->
+                                   <h6 style="margin-left:-40%">price: {{prod.price}}$</h6>
+                                 <!-- <div><img src="assets/images/star.png"  width="12%" style="margin-left: -70%;"></div><br> -->
+                                 <div><img src="assets/images/eye.png"  width="11%" style="margin-left: -70%;"> {{prod.rating.count}}</div>
+                                   <!-- <a  href="products/{{prod.id}}" class="btn-card">View</a> -->
+                                   
+                                  
+                               </div>
+                               
+                           </div>
+                       </div>
+                   </a>
+               </div> 
+             </div>
+   
+     <!-- mens cloth -->
+   
+     <div class="background">
+       <div id="cards_landscape_wrap-2" style="margin-top: -40%;">
+         <div class="container">
+             <div class="row" *ngIf="hideMens">
+                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" *ngFor="let prod of mencloth">
+                  
+                     <a href="">
+                         <div class="card-flyer">
+                             <div class="text-box">
+                                 <div class="image-box">
+                                   <a  href="products/{{prod.id}}"> <img src="{{prod.image}}" height="100px" alt="" /></a>
+                                 </div>
+                                 <div class="text-container">
+                                   <a  href="products/{{prod.id}}"> <h5>{{prod.title}}</h5></a><br>
+                                     <!-- <h5>{{prod.title}}</h5> -->
+                                     <h6 style="margin-left:-40%">price: {{prod.price}}$</h6>
+                                   <!-- <div><img src="assets/images/star.png"  width="12%" style="margin-left: -70%;"></div><br> -->
+                                   <div><img src="assets/images/eye.png"  width="11%" style="margin-left: -70%;"> {{prod.rating.count}}</div>
+                                     <!-- <a  href="products/{{prod.id}}" class="btn-card">View</a> -->
+                                     
+                                    
+                                 </div>
+                                 
+                             </div>
+                         </div>
+                     </a>
+                 </div> 
+               </div>
+   
+   <!-- women cloth -->
+   
+   <div class="background">
+     <div id="cards_landscape_wrap-2" style="margin-top: -40%;">
+       <div class="container">
+           <div class="row" *ngIf="hideWomens">
+               <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" *ngFor="let prod of womencloth">
+                
+                   <a href="">
+                       <div class="card-flyer">
+                           <div class="text-box">
+                               <div class="image-box">
+                                 <a  href="products/{{prod.id}}"> <img src="{{prod.image}}" height="100px" alt="" /></a>
+                               </div>
+                               <div class="text-container">
+                                 <a  href="products/{{prod.id}}"> <h5>{{prod.title}}</h5></a><br>
+                                   <!-- <h5>{{prod.title}}</h5> -->
+                                   <h6 style="margin-left:-40%">price: {{prod.price}}$</h6>
+                                 <!-- <div><img src="assets/images/star.png"  width="12%" style="margin-left: -70%;"></div><br> -->
+                                 <div><img src="assets/images/eye.png"  width="11%" style="margin-left: -70%;" > {{prod.rating.count}}</div>
+                                   <!-- <a  href="products/{{prod.id}}" class="btn-card">View</a> -->
+                                   
+                                  
+                               </div>
+                               
+                           </div>
+                       </div>
+                   </a>
+               </div> 
+             </div>
+   
