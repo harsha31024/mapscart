@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ShoppingService} from '../shopping.service';
 import { environment } from 'src/environments/environment';
-// import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-view-all-products',
@@ -30,9 +30,6 @@ export class ViewAllProductsComponent implements OnInit {
   hideslide=true;
 
   isLoading= false;
-
-  // categoryId:any=[];
-  // categoryInfo:any=[];
 
   titleSearch:any;
 
