@@ -131,7 +131,7 @@ getZoom(){
       
       zoom: 6,
       center: {  lat: 17.004393, lng: 81.783325 },
-      // mapTypeId: "satellite",
+      mapTypeId: "hybrid",
       
     }
   );
