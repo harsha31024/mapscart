@@ -228,7 +228,7 @@ getZoom(){
     const marker = new google.maps.Marker({
       position,
       map,
-      draggable: true,
+      // draggable: true,
       animation: google.maps.Animation.DROP,
       title: `${i + 1}. ${title}`,
       // label: `${i + 1}`,
