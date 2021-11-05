@@ -13,10 +13,10 @@ export class ViewAllProductsComponent implements OnInit {
 
   productData:any = [];
   categories:any=[];
-  electronics:any=[];
-  jewelery:any=[];
-  mencloth:any=[];
-  womencloth:any=[];
+  electronics:any;
+  jewelery:any;
+  mencloth:any;
+  womencloth:any;
 
   hideproducts=true;
   hideelectronics=false;
