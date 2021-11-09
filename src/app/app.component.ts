@@ -11,7 +11,7 @@ export class AppComponent {
 
   
   footer: boolean = true;
-  sidebar:boolean=true;
+  sidebar:boolean = true;
 
   
 
@@ -21,8 +21,9 @@ export class AppComponent {
     if(event instanceof RoutesRecognized){
       if(event['url'] == '/login' || event['url']== '/'){
         this.footer=false;
-        // this.sidebar=true;
+        this.sidebar=false;
       }
+     
       
     }
   })
