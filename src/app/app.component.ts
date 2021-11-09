@@ -21,6 +21,7 @@ export class AppComponent {
     if(event instanceof RoutesRecognized){
       if(event['url'] == '/login' || event['url']== '/'){
         this.footer=false;
+        // this.sidebar=true;
       }
       
     }

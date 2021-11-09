@@ -27,6 +27,7 @@ import { GooglemapsComponent } from './googlemaps/googlemaps.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ElectronicsComponent } from './electronics/electronics.component';
 
 
 
@@ -40,7 +41,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     ViewproductsByCategoryComponent,
     FooterComponent,
     GooglemapsComponent,
-    SidebarComponent
+    SidebarComponent,
+    ElectronicsComponent
   ],
   imports: [
     BrowserModule,

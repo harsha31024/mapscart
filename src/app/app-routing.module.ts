@@ -6,6 +6,7 @@ import { CactivateGuard} from './cactivate.guard';
 import { SingleProductComponent} from './single-product/single-product.component';
 // import { ViewproductsByCategoryComponent } from './viewproducts-by-category/viewproducts-by-category.component';
 import { GooglemapsComponent} from './googlemaps/googlemaps.component';
+import { ElectronicsComponent } from './electronics/electronics.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: "login", component: LoginComponent},
   { path: "products/:id", component:SingleProductComponent,canActivate:[CactivateGuard]},
   // { path: "productbycategory/:id",component:ViewproductsByCategoryComponent},
-  { path: "googlemaps",component:GooglemapsComponent}
+  { path: "googlemaps",component:GooglemapsComponent},
+  { path: "category/electronics",component:ElectronicsComponent}
   
 ];
 

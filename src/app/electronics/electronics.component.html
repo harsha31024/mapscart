@@ -1,0 +1,126 @@
+
+<nav class="navbar navbar-expand-md navbar-light bg-light main-menu" style="box-shadow:none">
+    <div class="container">
+  
+      <button type="button" id="sidebarCollapse" class="btn btn-link d-block d-md-none">
+        <i class="bx bx-menu icon-single"></i>
+      </button>
+  
+      <a class="navbar-brand" href="#">
+        <h3 class="font-weight-bold">Ecommerce</h3>
+        <img src="assets/images/flipkart2.png" width="25%" alt="">
+      </a>
+  
+      <ul class="navbar-nav ml-auto d-block d-md-none">
+        <li class="nav-item">
+          <a class="btn btn-link" href="#"><i class="bx bxs-cart icon-single"></i> <span
+              class="badge badge-danger"></span></a>
+        </li>
+      </ul>
+  
+      <div class="collapse navbar-collapse" style="margin-right: 20%;">
+        <!-- <form class="form-inline my-2 my-lg-0 mx-auto">
+    
+          <input class="form-control" type="search" name="title" [(ngModel)]="titleSearch" (ngModelChange)="Search()"
+            placeholder=" Search your products" autocomplete="off">
+          <button type="submit" class="button"><i class="fa fa-search"></i></button>
+  
+        </form> -->
+  
+      
+  
+        <ul class="navbar-nav">
+        
+          <li class="nav-item ml-md-3">
+            <!-- <a class="btn btn-primary" href="#"><i class="bx bxs-user-circle mr-1"></i> Log In / Register</a> -->
+            <div class="logout">
+              <button type="button" (click)="LogoutUser()" class="btn btn-info btn-md"
+                style="font-weight: 600;">Logout</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+  
+    </div>
+  </nav>
+  
+  <nav class="navbar navbar-expand-md navbar-light bg-light sub-menu">
+    <div class="container">
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mx-auto">
+          <!-- <li class="nav-item active"> -->
+            <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+          <!-- </li> -->
+          <!-- <li class="nav-item"> -->
+            <!-- <a class="nav-link" href="#">Products</a> -->
+          <!-- </li> -->
+          <!-- <li class="nav-item"> -->
+            <!-- <a class="nav-link" href="#">Schools</a> -->
+          <!-- </li> -->
+          <!-- <li class="nav-item"> -->
+            <!-- <a class="nav-link" href="#">Publishers</a> -->
+          <!-- </li> -->
+          <li class="nav-item dropdown">
+           
+            <div class="maps">
+              <a [routerLink]="['/googlemaps']" style="color: aliceblue;">Google Maps</a>
+            </div>
+  
+            <!-- <div class="dropdown">
+              <select (change)="onselect($event)" class="btn btn-info" style="margin-left: 390%;font-weight: 600;">
+                
+                <option [value]="0" style="font-weight: 600 ;">All</option>
+                <option *ngFor="let item of categories" [value]="item" style="font-weight: 600;">{{item}}</option>
+  
+              </select>
+             
+  
+            </div> -->
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="background">
+    <div id="cards_landscape_wrap-2" style="margin-top: -75%;">
+      <div class="container">
+        
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" *ngFor="let prod of electronics">
+
+            <a href="">
+              <div class="card-flyer">
+                <div class="text-box">
+                  <div class="image-box">
+                    <a href="products/{{prod.id}}"> <img src="{{prod.image}}" height="100px" alt="" /></a>
+                  </div>
+                  <div class="text-container">
+                    <a href="products/{{prod.id}}">
+                      <h5>{{prod.title}}</h5>
+                    </a><br>
+                    <!-- <h5>{{prod.title}}</h5> -->
+                    <h6 style="margin-left:-40%">price: {{prod.price}}$</h6>
+                    <!-- <div><img src="assets/images/star.png"  width="12%" style="margin-left: -70%;"></div><br> -->
+                    <div><img src="assets/images/eye.png" width="11%" style="margin-left: -70%;">
+                      {{prod.rating.count}}</div>
+                    <!-- <a  href="products/{{prod.id}}" class="btn-card">View</a> -->
+
+
+                  </div>
+
+                </div>
+              </div>
+            </a>
+          </div>
+           
+         
+        </div>
+
+        <button class="btn-theme btn btn-primary" tabindex="0">
+                             
+          <a href ="/products" style="color: aliceblue;" (click)="toggleLoading()">Back</a>
+          </button>
