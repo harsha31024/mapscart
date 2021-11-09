@@ -26,6 +26,7 @@ import { FooterComponent } from './footer/footer.component';
 import { GooglemapsComponent } from './googlemaps/googlemaps.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 
@@ -38,7 +39,8 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
     SingleProductComponent,
     ViewproductsByCategoryComponent,
     FooterComponent,
-    GooglemapsComponent
+    GooglemapsComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

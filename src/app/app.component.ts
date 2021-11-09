@@ -11,6 +11,10 @@ export class AppComponent {
 
   
   footer: boolean = true;
+  sidebar:boolean=true;
+
+  
+
   constructor(public active: ActivatedRoute,public router: Router) {
   this.router.events.forEach(event=>{
     console.log(event)
