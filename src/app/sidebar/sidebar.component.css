@@ -27,7 +27,7 @@ body{
     background: #063146;
     user-select: none;
     transition: all .5s ease;
-    
+    margin-top: -16%;
     
 }
 .sidebar ul a{
@@ -43,17 +43,15 @@ body{
     border-bottom: 1px solid black;
     transition: .4s;
     
-    
 }
 
 ul li:hover a{
     padding-left: 50px;
-    
+    margin-top: 4%;
 }
 
 .sidebar ul a i{
     margin-right: 16px;
-    
 }
 
 #check{
@@ -63,7 +61,7 @@ ul li:hover a{
 label #btn,label #cancel{
     position: relative;
     cursor: pointer;
-    background: #042331;
+    background: #054e70;
     border-radius: 3px;
     /* box-sizing: border-box; */
     box-shadow: 0 15px 25px rgba(0,0,0,0.5); 
@@ -84,7 +82,7 @@ label #cancel{
     left: -195px;
     top: 17px;
     font-size: 30px;
-    color: #0a5275;
+    color: #afd4e7;
     padding: 4px 9px;
     transition: all .5s ease;
     
@@ -102,7 +100,8 @@ label #cancel{
 }
 
 #check:checked ~ label #cancel{
-    left: 195px;
+    left: 150px;
+    margin-top: -300%;
     
 }
 
