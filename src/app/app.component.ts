@@ -23,7 +23,10 @@ export class AppComponent {
         this.footer=false;
         this.sidebar=false;
       }
-     
+     else{
+       this.footer=true;
+       this.sidebar=true;
+     }
       
     }
   })
